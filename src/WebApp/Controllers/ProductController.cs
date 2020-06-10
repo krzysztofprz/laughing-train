@@ -36,7 +36,8 @@ namespace WebApp.Controllers
         [Route("Product/Edit/{productId}")]
         public async Task<ActionResult> EditAsync(string productId)
         {
-            var result = await _orderService.Update(productId, 25);
+            var newQuantity = 25;
+            var result = await _orderService.Update(productId, newQuantity);
 
             TempData["UpdateMessage"] = result;
 

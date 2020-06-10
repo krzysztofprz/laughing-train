@@ -49,7 +49,9 @@ namespace ConsoleApp
 
             Console.WriteLine("Updating the first product stock of the first order to 25");
 
-            var updateMessage = await _orderService.Update("001201-L", 25);
+            var productId = "001201-L";
+            var newQuantity = 25;
+            var updateMessage = await _orderService.Update(productId, newQuantity);
 
             Console.WriteLine($"Update message: {updateMessage}");
         }
